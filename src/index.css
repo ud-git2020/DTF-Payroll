@@ -1,0 +1,74 @@
+@import 'tailwindcss';
+
+/* ----------------------------------------------------------------
+   Design tokens (Tailwind v4 @theme). Tea-factory utilitarian theme:
+   deep tea-green primary, warm paper neutrals, mono for figures.
+------------------------------------------------------------------- */
+@theme {
+  --font-sans: 'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+
+  --color-paper: #f7f6f1;
+  --color-surface: #ffffff;
+  --color-line: #e3e1d8;
+
+  --color-ink-900: #1c211d;
+  --color-ink-700: #3c4540;
+  --color-ink-500: #6b756e;
+  --color-ink-300: #9aa39c;
+
+  --color-tea-50: #eef5ef;
+  --color-tea-100: #d6e7da;
+  --color-tea-300: #7fb892;
+  --color-tea-500: #2f8050;
+  --color-tea-600: #266a43;
+  --color-tea-700: #1f5e3f;
+  --color-tea-900: #143b28;
+
+  --color-amber-edit: #fffdf0;
+  --color-amber-line: #f0ead0;
+
+  --color-danger: #b3261e;
+  --color-warn: #b26a00;
+  --color-info: #1c5d99;
+
+  --radius-card: 10px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background: var(--color-paper);
+  color: var(--color-ink-900);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* tabular figures everywhere numbers matter */
+.tabular {
+  font-family: var(--font-mono);
+  font-feature-settings: 'tnum' 1;
+}
+
+/* thin scrollbars for the data grids */
+.scroll-thin::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+.scroll-thin::-webkit-scrollbar-thumb {
+  background: var(--color-line);
+  border-radius: 6px;
+  border: 2px solid var(--color-paper);
+}
+.scroll-thin::-webkit-scrollbar-thumb:hover {
+  background: var(--color-ink-300);
+}
